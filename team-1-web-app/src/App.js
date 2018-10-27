@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import Main from './components/main';
 import { Link } from 'react-router-dom';
-import { Navigation, Layout, Header, Drawer, Content } from 'react-mdl';
+import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
+import Login from './components/login.js';
+import SearchPage from './components/searchpage.js';
+
 
 class App extends Component {
   render() {
@@ -10,7 +13,7 @@ class App extends Component {
       <div className="demo-big-content">
     <Layout>
         <Header className='header-colour'title="My Portfolio" scroll>
-          
+
         </Header>
         <Drawer title="Title">
             <Navigation>

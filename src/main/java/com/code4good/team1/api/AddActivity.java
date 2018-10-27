@@ -16,15 +16,12 @@ public class AddActivity {
     @Autowired
     private ActivityService activityService;
 
-    @GetMapping("addactivity")
-    @ResponseBody
-    public String getActivities(@RequestParam(name = "activity", required = false, defaultValue = "Stranger") String activity) {
+    @PutMapping("/addactivity")
+    public void getActivities(@RequestBody Activity activity) {
 
         List<Comment> comments = new ArrayList<>();
         List<String> tags = new ArrayList<>();
-
-        activityService.createActivity();
-
-        return "the addactivity api works " + activity;
+        System.out.println(activity.name);
+        activityService.createActivity(activity);
     }
 }

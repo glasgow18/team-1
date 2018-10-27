@@ -11,8 +11,9 @@ public class ActivityService {
     @Autowired
     private ActivityRepository activityRepository;
 
-    public void createActivity() {
-        activityRepository.save(new Activity("Test", true, 0.0, 0.0));
+    public void createActivity(Activity activity) {
+        //Map Here
+        activityRepository.save(activity);
     }
 
 }

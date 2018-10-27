@@ -1,8 +1,13 @@
 package com.code4good.team1.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+
+import static org.springframework.data.repository.init.ResourceReader.Type.JSON;
 
 @Entity
 public class Activity implements Serializable {
@@ -20,15 +25,19 @@ public class Activity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
+    @JsonFormat
     @Column(name = "name", nullable = false)
     public String name;
 
+    @JsonFormat
     @Column(name = "mapFlag", nullable = false)
     public boolean mapFlag;
 
+    @JsonFormat
     @Column(name = "lat", nullable = false)
     public double lat;
 
+    @JsonFormat
     @Column(name = "lng", nullable = false)
     public double lng;
 

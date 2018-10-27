@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Activity from './activity.js';
 
 class SearchPage extends Component{
   constructor(props){
@@ -14,14 +15,31 @@ class SearchPage extends Component{
     });
   }
 
+
+
+
   search = () =>{
     const query = (this.state.inputValue);
     alert('input: '+query);
     const userAction = async () => {
         const response = await fetch('http://localhost:8080/search?searchTerm='+query);
         const myJson = await response.json();
-  }
-}
+
+        for (var key in myJson) {
+        // skip loop if the property is from prototype
+        if (!myJson.hasOwnProperty(key)) continue;
+
+        var obj = myJson[key];
+        for (var prop in obj) {
+            // skip loop if the property is from prototype
+            if(!obj.hasOwnProperty(prop)) continue;
+            alert(prop + " = " + obj[prop]);
+
+              }
+            }
+          }
+        }
+
     render(){
         return (
           <div className="container-fluid">
@@ -43,6 +61,11 @@ class SearchPage extends Component{
               </div>
             </div>
             </div>
+            <div className="row">
+              <div className="col-sm-12">
+                  <Activity/>
+                  </div>
+                </div>
           </div>
         );
     }

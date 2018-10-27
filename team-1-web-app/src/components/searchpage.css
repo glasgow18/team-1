@@ -17,3 +17,7 @@ body{
 .search-main-content{
     padding-top:20vh;
 }
+
+.activity-card{
+  max-height: 20vh;
+}

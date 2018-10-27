@@ -12,7 +12,6 @@ public class ActivityService {
     private ActivityRepository activityRepository;
 
     public void createActivity(Activity activity) {
-        //Map Here
         activityRepository.save(activity);
     }
 

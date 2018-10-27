@@ -14,8 +14,11 @@ public class RegisterAPI {
     private LoginService loginService;
 
     @PutMapping("/register")
-    public void registerUser(@RequestBody Login login) {
-
+    public String registerUser(@RequestBody Login login) {
+        if (loginService.registerUser(login)) {
+            return "{" + "confirmation" + ":" + "true" + "}";
+        }
+        return "{" + "confirmation" + ":" + "false" + "}";
     }
 
 }

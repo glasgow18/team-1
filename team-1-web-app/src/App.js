@@ -5,22 +5,7 @@ import { Link } from 'react-router-dom';
 import { Navigation, Layout, Header, Drawer, Content } from 'react-mdl';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  
-    this.state = {
-      isAuthenticated: false
-    };
-  }
-  
-  userHasAuthenticated = authenticated => {
-    this.setState({ isAuthenticated: authenticated });
-  }
   render() {
-    const childProps = {
-      isAuthenticated: this.state.isAuthenticated,
-      userHasAuthenticated: this.userHasAuthenticated
-    };
     return (
       <div className="demo-big-content">
     <Layout>

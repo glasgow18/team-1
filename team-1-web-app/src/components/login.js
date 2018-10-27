@@ -36,7 +36,7 @@ class Login extends Component {
         const URL = "localhost:8080/register";
 
         fetch(URL, {
-            method: 'GET',
+            method: 'POST',
             body: state,
             headers: {
                 'Content-Type': 'application/json'

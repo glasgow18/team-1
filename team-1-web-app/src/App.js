@@ -3,8 +3,8 @@ import './App.css';
 import Main from './components/main';
 import { Link } from 'react-router-dom';
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
-import Login from './components/login.js';
-import SearchPage from './components/searchpage.js';
+import Login from './components/login';
+import SearchPage from './components/searchpage';
 
 
 class App extends Component {

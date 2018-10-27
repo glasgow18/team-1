@@ -1,8 +1,27 @@
 import React, {Component} from 'react';
-import './searchpage.css';
-import SearchResults from './searchresults.js';
-import SearchBar from './searchbar.js';
+
 class SearchPage extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      inputValue: ''
+    };
+  }
+
+  updateInputValue(evt) {
+    this.setState({
+      inputValue: evt.target.value
+    });
+  }
+
+  search = () =>{
+    const query = (this.state.inputValue);
+    alert('input: '+query);
+    const userAction = async () => {
+        const response = await fetch('http://localhost:8080/search?searchTerm='+query);
+        const myJson = await response.json();
+  }
+}
     render(){
         return (
           <div className="container-fluid">

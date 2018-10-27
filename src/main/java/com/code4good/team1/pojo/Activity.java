@@ -18,6 +18,10 @@ public class Activity implements Serializable {
     public String name;
 
     @JsonFormat
+    @Column(name = "description", nullable = false)
+    public String description;
+
+    @JsonFormat
     @Column(name = "mapFlag", nullable = false)
     public boolean mapFlag;
 
@@ -29,12 +33,14 @@ public class Activity implements Serializable {
     @Column(name = "lng", nullable = false)
     public double lng;
 
+
     public Activity() {
 
     }
 
-    public Activity(String name, boolean mapFlag, double lat, double lng) {
+    public Activity(String name, String description, boolean mapFlag, double lat, double lng) {
         this.name = name;
+        this.description = description;
         this.mapFlag = mapFlag;
         this.lat = lat;
         this.lng = lng;

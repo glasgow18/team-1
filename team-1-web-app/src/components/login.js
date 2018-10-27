@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+var sha256 = require("sha256");
 
 class Login extends Component {
     constructor(){
@@ -27,6 +28,22 @@ class Login extends Component {
 
         console.log('The form was submitted with the following data:');
         console.log(this.state);
+
+        const state = JSON.stringify({
+            email: this.state.email,
+            password: sha256(this.state.password)
+        });
+        const URL = "localhost:8080/register";
+
+        fetch(URL, {
+            method: 'GET',
+            body: state,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+            .then(response => console.log('Success:', JSON.stringify(response)))
+            .catch(error => console.error('Error:', error));
     }
     render(){
         return(

@@ -15,6 +15,7 @@ class App extends Component {
         <Drawer title="Title">
             <Navigation>
             <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
             </Navigation>
         </Drawer>
         <Content>

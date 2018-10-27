@@ -21,7 +21,6 @@ public class AddActivity {
 
         List<Comment> comments = new ArrayList<>();
         List<String> tags = new ArrayList<>();
-        System.out.println(activity.name);
         activityService.createActivity(activity);
     }
 }

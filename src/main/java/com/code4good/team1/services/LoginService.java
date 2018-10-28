@@ -15,10 +15,7 @@ public class LoginService {
 
     public boolean loginUser(Login login) {
         Optional<Login> temp = loginRepository.findByEmail(login.email);
-        if (temp.isPresent()) {
-            return temp.get().password.equals(login.password);
-        }
-        return false;
+        return temp.map(login1 -> login1.password.equals(login.password)).orElse(false);
     }
 
     public boolean registerUser(Login login) {

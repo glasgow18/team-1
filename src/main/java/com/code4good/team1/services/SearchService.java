@@ -49,28 +49,20 @@ public class SearchService {
 
     private void getNamedActivies(String term, List<Activity> searchList) {
         Optional<Iterable<Activity>> searchActivity = activityRepository.findAllByName(term);
-        if (searchActivity.isPresent()) {
-            searchActivity.get().forEach(elem -> {
-                searchList.add(elem);
-            });
-        }
+        searchActivity.ifPresent(activities -> activities.forEach(searchList::add));
     }
 
     private void getNamedTags(String term, List<Activity> searchList) {
         Optional<Iterable<Tag>> searchTag = tagRepository.findAllByTag(term);
-        if (searchTag.isPresent()) {
-            searchTag.get().forEach(tag -> {
-                Optional<Iterable<ActivityTags>> activityTags = activityTagsRepository.findAllByTagID(tag.id);
-                if (activityTags.isPresent()) {
-                    for (ActivityTags at : activityTags.get()) {
-                        Optional<Activity> result = activityRepository.findById(at.activityID);
-                        if (result.isPresent()) {
-                            searchList.add(result.get());
-                        }
-                    }
+        searchTag.ifPresent(tags -> tags.forEach(tag -> {
+            Optional<Iterable<ActivityTags>> activityTags = activityTagsRepository.findAllByTagID(tag.id);
+            if (activityTags.isPresent()) {
+                for (ActivityTags at : activityTags.get()) {
+                    Optional<Activity> result = activityRepository.findById(at.activityID);
+                    result.ifPresent(searchList::add);
                 }
-            });
-        }
+            }
+        }));
     }
 
     private void populateComments(List<Activity> searchList) {
@@ -87,14 +79,10 @@ public class SearchService {
     private void populateTags(List<Activity> searchList) {
         searchList.forEach(e -> {
             Optional<Iterable<ActivityTags>> actagResults = activityTagsRepository.findByActivityID(e.id);
-            if (actagResults.isPresent()) {
-                actagResults.get().forEach(actag -> {
-                    Optional<Tag> tagResult = tagRepository.findById(actag.tagID);
-                    if (tagResult.isPresent()) {
-                        e.tags.add(tagResult.get());
-                    }
-                });
-            }
+            actagResults.ifPresent(activityTags -> activityTags.forEach(actag -> {
+                Optional<Tag> tagResult = tagRepository.findById(actag.tagID);
+                tagResult.ifPresent(tag -> e.tags.add(tag));
+            }));
         });
     }
 

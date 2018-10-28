@@ -1,9 +1,11 @@
 package com.code4good.team1.services;
 
 import com.code4good.team1.pojo.Activity;
+import com.code4good.team1.pojo.ActivityTags;
 import com.code4good.team1.pojo.Comment;
 import com.code4good.team1.pojo.Tag;
 import com.code4good.team1.repositories.ActivityRepository;
+import com.code4good.team1.repositories.ActivityTagsRepository;
 import com.code4good.team1.repositories.CommentRepository;
 import com.code4good.team1.repositories.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +25,23 @@ public class ActivityService {
     @Autowired
     private TagRepository tagRepository;
 
+    @Autowired
+    private ActivityTagsRepository activityTagsRepository;
+
     public void createActivity(Activity activity) {
-        activityRepository.save(activity);
-        activity.tags.forEach(tag -> {
-            tag.activityID = activity.id;
+        int nextId = Math.toIntExact(activityRepository.count()) + 1;
+
+        activity.tags.forEach(e -> {
+            Optional<Tag> tempTag = tagRepository.findByTag(e.tag);
+            if (tempTag.isPresent()) {
+                activityTagsRepository.save(new ActivityTags(nextId, tempTag.get().id));
+            } else {
+                Tag savedTag = tagRepository.save(new Tag(e.tag));
+                activityTagsRepository.save(new ActivityTags(nextId, savedTag.id));
+            }
         });
+        activity.tags.clear();
+        activityRepository.save(activity);
     }
 
     public void addComment(int id, String comment) {
@@ -41,13 +55,12 @@ public class ActivityService {
     }
 
     public void addTag(int id, String tag) {
-        Optional<Activity> activity = activityRepository.findById(id);
-        if (activity.isPresent()) {
-            Activity dbActivity = activity.get();
-            Tag savedTag = tagRepository.save(new Tag(id, tag));
-            dbActivity.tags.add(savedTag);
-            activityRepository.save(dbActivity);
+        Optional<Tag> tempTag = tagRepository.findByTag(tag);
+        if (tempTag.isPresent()) {
+            activityTagsRepository.save(new ActivityTags(id, tempTag.get().id));
+        } else {
+            Tag savedTag = tagRepository.save(new Tag(tag));
+            activityTagsRepository.save(new ActivityTags(id, savedTag.id));
         }
     }
-
 }

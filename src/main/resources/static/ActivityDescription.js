@@ -1,9 +1,6 @@
 var json = '{"id": 1,"nameOb": "Kicking Leaves","description": "Kicking leaves for people who like kicking leaves","mapFlag": false,"lat": 28,"long": 30,"commento": ["Colin luvs it", "Very nice"],"tags": ["sound", "leaves", "outside"]}'
 var content = JSON.parse(json);
 content.toString();
-console.log(content.mapFlag);
-console.log(content.nameOb);
-console.log(content.description);
 var nameOf = content.nameOb;
 var description = content.description;
 var lat = content.lat;
@@ -18,9 +15,7 @@ if(mapFlag==false){
     document.getElementById("map").style.height = '0';
     document.getElementById("map").style.width = '0';
 }
-else{
-    initMap();
-}
+
 
 function initMap() {
     if (mapFlag == true) {

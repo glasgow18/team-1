@@ -12,6 +12,7 @@ public class AddActivity {
     @Autowired
     private ActivityService activityService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/addactivity")
     public void getActivities(@RequestBody Activity activity) {
         activityService.createActivity(activity);

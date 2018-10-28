@@ -26,14 +26,11 @@ class Login extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
-
         const state = JSON.stringify({
             email: this.state.email,
             password: sha256(this.state.password)
         });
-        const URL = "localhost:8080/register";
+        const URL = "http://localhost:8080/login";
 
         fetch(URL, {
             method: 'POST',

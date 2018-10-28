@@ -1,7 +1,5 @@
 package com.code4good.team1.pojo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import javax.persistence.*;
 
 @Entity

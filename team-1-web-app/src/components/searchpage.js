@@ -48,7 +48,6 @@ class SearchPage extends Component {
 
   search = () => {
     const query = (this.state.inputValue);
-    alert("input: " + query);
     fetch('http://localhost:8080/search?searchTerm=' + query)
       .then(function (response) {
         return response.json();

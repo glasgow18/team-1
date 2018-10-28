@@ -29,7 +29,8 @@ public class ActivityService {
     private ActivityTagsRepository activityTagsRepository;
 
     public void createActivity(Activity activity) {
-        final int nextId = Math.toIntExact(activityRepository.count()) + 1;
+        int nextId = Math.toIntExact(activityRepository.count()) + 1;
+
         activity.tags.forEach(e -> {
             Optional<Tag> tempTag = tagRepository.findByTag(e.tag);
             if (tempTag.isPresent()) {

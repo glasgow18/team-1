@@ -13,7 +13,7 @@
 
 
 </head>
-<body>
+<body onload="initMap()">
 <p>Are you here? Check-In! <button style="float:right">Check-In</button>
 </p>
 <h4 id = "h4Name"></h4>
@@ -23,7 +23,6 @@
 <div id = "activityDescription">
 
 </div>
-
 
 <!--The div element for the map -->
 <!--IF THE ACTIVITY HAS A LOCATION THEN SHOW THE MAP, IF NOT, DO NOT SHOW-->
@@ -46,12 +45,24 @@
     </div>
     <form>
          <input type="text" name="commentInput" id="commentID"><br>
-        <input type="submit" value="Add to our knowledge base!" onsubmit="checkInput()">
+        <input type="submit" value="Add to our knowledge base!"  onclick="checkInput()">
         <!--GO AND DETERMINE IF IT IS GOOD OR BAD COMMENT THEN ADD TO DB AND PAGE-->
     </form>
 </div>
 
+<script>
+    function initMap() {
+        if (mapFlag == true) {
+            var uluru = {lat: lat, lng: long};
 
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 14, center: uluru});
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+    }
+</script>
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">

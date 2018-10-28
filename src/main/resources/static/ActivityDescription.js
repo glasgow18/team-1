@@ -18,9 +18,7 @@ if(mapFlag==false){
     document.getElementById("map").style.height = '0';
     document.getElementById("map").style.width = '0';
 }
-else{
-    initMap();
-}
+
 
 function initMap() {
     if (mapFlag == true) {

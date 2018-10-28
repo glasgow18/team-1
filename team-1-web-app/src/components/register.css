@@ -17,6 +17,10 @@ padding-top:10vh;
   color: #fefefe;
 }
 
+.login-wrapper{
+  margin-top: 10vh;
+}
+
 .FormField__Button{
   text-align: center;
   padding: 1.5rem;

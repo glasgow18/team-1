@@ -27,9 +27,6 @@ class AddActivity extends Component {
   }
 
   addActivity() {
-    // var aMapFlag = true
-    // var aLat = 40;
-    // var aLong = 20;
 
 
     if (this.state.aName !== "" && this.state.aName !== null) {
@@ -38,9 +35,7 @@ class AddActivity extends Component {
         name: this.state.aName,
         description: this.state.aDetails,
         tags: [tagArr],
-        // mapFlag: aMapFlag,
-        // lat: aLat,
-        // long: aLong
+
 
       };
 
@@ -77,7 +72,7 @@ class AddActivity extends Component {
     return (
       <div className="container-fluid add-activity-wrapper">
         <div className="row">
-          <div className="col-sm-12">
+          <div className="col-sm-4">
             <div className="jumbotron">
               <h4>Add an Activity</h4>
               <p className="lead">Add some extra tings fam</p>

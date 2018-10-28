@@ -18,48 +18,44 @@ class SearchPage extends Component {
 
 
 
+  // search = () => {
+  //   const query = (this.state.inputValue);
+  //   alert('input: ' + query);
+  //   const userAction = async () => {
+  //     alert("HERE");
+  //     fetch('http://example.com/movies.json')
+  //       .then(function (response) {
+  //         return response.json();
+  //       })
+  //       .then(function (myJson) {
+  //         console.log(JSON.stringify(myJson));
+  //       });
+  //     let str = '<ul>';
+  //     for (var key in myJson) {
+  //       // skip loop if the property is from prototype
+  //       if (!myJson.hasOwnProperty(key)) continue;
+  //       var obj = myJson[key];
+  //       alert(obj);
+  //       str +
+  //       for (var prop in obj) {
+  //         // skip loop if the property is from prototype
+  //         if (!obj.hasOwnProperty(prop)) continue;
+  //         alert(prop + " = " + obj[prop]);
+  //       }
+  //     }
+  //   }
+  // }
+
   search = () => {
     const query = (this.state.inputValue);
-    alert('input: ' + query);
-    const userAction = async () => {
-      const response = await fetch('http://localhost:8080/search?searchTerm=' + query);
-      const myJson = await response.json();
-      let str = '<ul>';
-      for (var key in myJson) {
-        // skip loop if the property is from prototype
-        if (!myJson.hasOwnProperty(key)) continue;
-        var obj = myJson[key];
-        console.log(obj);
-        str +=
-          <li><div className="row">
-            <div className="col-sm-12">
-              <div className="col-sm-12">
-                <div className="card ">
-                  <div className="card-body">
-                    <div className="jumbotron">
-                      <div className="row">
-                        <div className="col-sm-6"><img src={this.state.image} width="90%" height="90%" /></div>
-                        <div className="col-sm-4"><h3>{obj.Name}</h3></div>
-                      </div>
-                      <div className="row">
-                        <div className="col-sm-12">
-                          <p className="lead">{obj.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </li>
-        for (var prop in obj) {
-          // skip loop if the property is from prototype
-          if (!obj.hasOwnProperty(prop)) continue;
-          // alert(prop + " = " + obj[prop]);
-        }
-      }
-    }
+    alert("input: " + query);
+    fetch('http://localhost:8080/search?searchTerm=' + query)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        console.log(JSON.stringify(myJson));
+      });
   }
 
   render() {

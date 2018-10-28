@@ -54,7 +54,8 @@ class SearchPage extends Component {
         return response.json();
       })
       .then(function (myJson) {
-        console.log(JSON.stringify(myJson));
+        const obj = JSON.stringify(myJson)
+        console.log(obj);
       });
   }
 

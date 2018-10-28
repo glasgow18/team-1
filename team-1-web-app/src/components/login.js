@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './register.css';
 var sha256 = require("sha256");
 
 class Login extends Component {
@@ -44,22 +45,31 @@ class Login extends Component {
     }
     render(){
         return(
-             <div className="FormCenter">
-            <form onSubmit={this.handleSubmit} className="LoginForum" onSubmit={this.handleSubmit}>
-            <div className="FormField">
-                <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
-                <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
-              </div>
 
-              <div className="FormField">
-                <label className="FormField__Label" htmlFor="password">Password</label>
-                <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
-              </div>
+          <div className="container-fluid login-wrapper">
+            <div className="row">
+              <div className="col-sm-4"></div>
+              <div className="col-sm-4">
+                <div className="FormCenter">
+               <form onSubmit={this.handleSubmit} className="LoginForum" onSubmit={this.handleSubmit}>
+               <div className="FormField">
+                   <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
+                   <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
+                 </div>
 
-              <div className="FormField">
-                  <button className="FormField__Button mr-20">Sign In</button> <Link to="/register" className="FormField__Link">Create an account</Link>
+                 <div className="FormField">
+                   <label className="FormField__Label" htmlFor="password">Password</label>
+                   <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
+                 </div>
+
+                 <div className="FormField">
+                     <button className="FormField__Button mr-20">Sign In</button> <Link to="/register" className="FormField__Link">Create an account</Link>
+                 </div>
+               </form>
+             </div>
               </div>
-            </form>
+              <div className="col-sm-4"></div>
+            </div>
           </div>
         )
     }

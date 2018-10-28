@@ -19,5 +19,13 @@ body{
 }
 
 .activity-card{
-  max-height: 20vh;
+  max-height: 5vh;
+}
+
+.header{
+color:black;
+}
+
+.subheading{
+color:black
 }

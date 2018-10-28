@@ -1,4 +1,6 @@
-var json = '{"id": 1,"nameOb": "Kicking Leaves","description": "Kicking leaves for people who like kicking leaves","mapFlag": false,"lat": 28,"long": 30,"commento": ["Colin luvs it", "Very nice"],"tags": ["sound", "leaves", "outside"]}'
+//var json = '{"id": 1,"nameOb": "Kicking  Crunching Leaves","description": "Plenty of crunchy leaves to be kicked around and stamped on","mapFlag": false,"lat": 28,"long": 30,"commento": ["Colin luvs it", "The sound is amazing!"],"tags": ["sound", "leaves", "outside","autumn"]}'
+var json = '{"id": 2,"nameOb": "National Museum of Scotland","description": "The museum has so much to do, so many different topics! Whole day event and kept us entertained for hours","mapFlag": true,"lat": 55.9471904,"long": -3.1913566,"commento": ["Easy parking and wheelchair access", "Staff are so kind and helpful"],"tags": ["groups", "touch", "sound","inside"]}'
+
 var content = JSON.parse(json);
 content.toString();
 var nameOf = content.nameOb;
@@ -17,24 +19,14 @@ if(mapFlag==false){
 }
 
 
-function initMap() {
-    if (mapFlag == true) {
-        var uluru = {lat: lat, lng: long};
 
-        // The map, centered at Uluru
-        var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 14, center: uluru});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: uluru, map: map});
-    }
-}
 
 document.getElementById("h4Name").innerHTML = nameOf;
 document.getElementById("activityDescription").innerHTML = description;
 
 
 for(var comment in content.commento){
-    document.getElementById("reviews").innerHTML += "<p> "+ comments[comment] + " <button>Report comment as unhelpful</button></p>";
+    document.getElementById("reviews").innerHTML += "<p> "+ comments[comment] + " <button>Report comment as unhelpful</button><button>Like</button></p>";
 }
 
 for(var tag in content.tags) {
@@ -42,6 +34,7 @@ for(var tag in content.tags) {
 }
 
 function checkInput(){
+
     console.log(document.getElementById("commentID").value);
     if(document.getElementById("commentID").value.contains("bad")){
         console.log(document.getElementById("commentID").value);

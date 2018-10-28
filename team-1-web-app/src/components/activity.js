@@ -4,8 +4,8 @@ class Activity extends Component{
   constructor(props){
     super(props);
     this.state = {
-      name:'Test Name',
-      description:'Test description',
+      name:'Activity Name',
+      description:'Activity description',
       image:'gnomechild.jpg',
       maplocation:'',
       lat:0,

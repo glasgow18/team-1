@@ -5,25 +5,26 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "comments")
-public class Comment {
+@Table(name = "activitytags")
+public class ActivityTags {
 
-    @Column
-    public int activityID;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
-    @JsonFormat
     @Column
-    public String comment;
+    public int activityID;
 
-    public Comment(int activityID, String comment) {
+    @Column
+    public int tagID;
+
+    public ActivityTags(int activityID, int tagID) {
         this.activityID = activityID;
-        this.comment = comment;
+        this.tagID = tagID;
     }
 
-    public Comment() {
+    public ActivityTags() {
     }
+
 }

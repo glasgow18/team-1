@@ -8,9 +8,6 @@ import javax.persistence.*;
 @Table(name = "tags")
 public class Tag {
 
-    @Column
-    public int activityID;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
@@ -19,8 +16,7 @@ public class Tag {
     @Column
     public String tag;
 
-    public Tag(int activityID, String tag) {
-        this.activityID = activityID;
+    public Tag(String tag) {
         this.tag = tag;
     }
 

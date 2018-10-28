@@ -21,6 +21,11 @@ padding-top:10vh;
   margin-top: 10vh;
 }
 
+.register-wrapper{
+  margin-top: 10vh;
+  
+}
+
 .FormField__Button{
   text-align: center;
   padding: 1.5rem;

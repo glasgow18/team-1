@@ -75,7 +75,7 @@ class AddActivity extends Component {
           <div className="col-sm-4">
             <div className="jumbotron">
               <h4>Add an Activity</h4>
-              <p className="lead">Add some extra tings fam</p>
+              <p className="lead">Add some details</p>
               <form id="addActivityForm" onsubmit={this.addActivity}>
                 <div>
                   <p id="activityNameLabel">

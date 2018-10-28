@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "comments")
-public class Comment {
+@Table(name = "tags")
+public class Tag {
 
     @Column
     private int activityID;
@@ -17,17 +17,14 @@ public class Comment {
 
     @JsonFormat
     @Column
-    public String comment;
+    public String tag;
 
-    public Comment(String comment) {
-        this.comment = comment;
-    }
-
-    public Comment(int activityID, String comment) {
+    public Tag(int activityID, String tag) {
         this.activityID = activityID;
-        this.comment = comment;
+        this.tag = tag;
     }
 
-    public Comment() {
+    public Tag() {
     }
+
 }

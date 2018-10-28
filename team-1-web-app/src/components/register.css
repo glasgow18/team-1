@@ -1,0 +1,41 @@
+.register-wrapper{
+padding-top:10vh;
+  /* padding-left: 20vw;
+  padding-bottom: 20vh; */ */
+  /* background-color:red; */
+
+  font-size: 2rem;
+}
+
+.FormField{
+  padding: 15px;
+
+}
+
+.FormField label{
+  padding-right: 5vw;
+  color: #fefefe;
+}
+
+.FormField__Button{
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #97B69B;
+  border: none;
+  box-shadow: none;
+  color: #EEE4E1;
+  transition-duration: 1.5s;
+
+
+}
+
+.FormField__Button:hover{
+    transition-duration: 1.5s;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #EEE4E1;
+  border: none;
+  box-shadow: none;
+  color: black;
+
+}

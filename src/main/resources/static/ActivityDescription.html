@@ -11,23 +11,7 @@
 
     </style>
 
-<script>
-    var json = '{"id": 1,"nameOb": "Kicking Leaves","description": "Kicking leaves for people who like kicking leaves","mapFlag": false,"lat": 28,"long": 30,"commento": ["Colin luvs it", "Very nice"],"tags": ["sound", "leaves", "outside"]}'
-    var content = JSON.parse(json);
-    content.toString();
-        console.log(content.mapFlag);
-        console.log(content.nameOb);
-        console.log(content.description);
-        var nameOf = content.nameOb;
-        var description = content.description;
-        var lat = content.lat;
-        var long = content.long;
-        var comments = content.commento;
-        var mapFlag = content.mapFlag;
-        var tags = content.tags;
 
-
-</script>
 </head>
 <body>
 <p>Are you here? Check-In! <button style="float:right">Check-In</button>
@@ -46,13 +30,7 @@
 
 
 <div id="map"></div>
-<script>
-    if(mapFlag==false){
-        document.getElementById("map").style.height = '0';
-        document.getElementById("map").style.width = '0';
 
-    }
-</script>
 
 <h3>Relevant tags</h3>
 <div id="tags">
@@ -67,45 +45,17 @@
    <img src="clouds.png" width="200" height="200">
     </div>
     <form>
-         <input type="text" name="comment"><br>
-        <input type="submit" value="Add to our knowledge base!">
+         <input type="text" name="commentInput" id="commentID"><br>
+        <input type="submit" value="Add to our knowledge base!" onsubmit="checkInput()">
         <!--GO AND DETERMINE IF IT IS GOOD OR BAD COMMENT THEN ADD TO DB AND PAGE-->
     </form>
 </div>
 
-<script>
-//    function inputDecide(){
-//        if()
-//    }
 
-    function initMap() {
-        if (mapFlag == true) {
-            var uluru = {lat: lat, lng: long};
-
-            // The map, centered at Uluru
-            var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 14, center: uluru});
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({position: uluru, map: map});
-        }
-    }
-
-    document.getElementById("h4Name").innerHTML = nameOf;
-    document.getElementById("activityDescription").innerHTML = description;
-
-
-    for(var comment in content.commento){
-        document.getElementById("reviews").innerHTML += "<p> "+ comments[comment] + " <button>Report comment as unhelpful</button></p>";
-    }
-
-    for(var tag in content.tags) {
-        document.getElementById("tags").innerHTML += "<p>" + tags[tag] + " </p>";
-    }
-
-</script>
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
 </script>
+<script src ="ActivityDescription.js"></script>
 </body>
 </html>

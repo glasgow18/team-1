@@ -43,3 +43,9 @@ for(var comment in content.commento){
 for(var tag in content.tags) {
     document.getElementById("tags").innerHTML += "<p>" + tags[tag] + " </p>";
 }
+
+function checkInput(){
+    if(document.getElementById("commentID").value.contains("bad","rubbish","terrible","horrible","boring")){
+        alert("Your comment has been forwarded to admin as it contains negative language");
+    }
+}

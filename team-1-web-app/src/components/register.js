@@ -32,10 +32,10 @@ class Register extends Component {
                 email: this.state.email,
                 password: sha256(this.state.password)
             });
-            const URL = "localhost:8080/register";
+            const URL = "http://localhost:8080/register";
 
             fetch(URL, {
-                method: 'POST',
+                method: 'PUT',
                 body: state,
                 headers: {
                     'Content-Type': 'application/json'

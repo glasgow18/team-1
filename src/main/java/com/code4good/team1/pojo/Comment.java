@@ -19,10 +19,6 @@ public class Comment {
     @Column
     public String comment;
 
-    public Comment(String comment) {
-        this.comment = comment;
-    }
-
     public Comment(int activityID, String comment) {
         this.activityID = activityID;
         this.comment = comment;

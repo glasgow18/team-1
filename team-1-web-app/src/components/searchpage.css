@@ -1,0 +1,23 @@
+body{
+    padding: 2rem;
+}
+
+.search-header h1{
+   text-align: center;
+}
+.form-control{
+
+}
+
+.search-page-wrapper{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.search-main-content{
+    padding-top:20vh;
+}
+
+.activity-card{
+  max-height: 20vh;
+}

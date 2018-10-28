@@ -17,7 +17,9 @@ var tags = content.tags;
 if(mapFlag==false){
     document.getElementById("map").style.height = '0';
     document.getElementById("map").style.width = '0';
-
+}
+else{
+    initMap();
 }
 
 function initMap() {
@@ -45,7 +47,10 @@ for(var tag in content.tags) {
 }
 
 function checkInput(){
-    if(document.getElementById("commentID").value.contains("bad","rubbish","terrible","horrible","boring")){
+    console.log(document.getElementById("commentID").value);
+    if(document.getElementById("commentID").value.contains("bad")){
+        console.log(document.getElementById("commentID").value);
+
         alert("Your comment has been forwarded to admin as it contains negative language");
     }
 }

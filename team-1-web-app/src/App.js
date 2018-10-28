@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
 import Main from './components/main';
 import { Link } from 'react-router-dom';
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 import Login from './components/login';
 import SearchPage from './components/searchpage';
 import ActivityPage from './components/activitypage';
-
+import AddActivity from './components/addactivity';
+import './App.css';
 
 class App extends Component {
 
@@ -61,7 +61,7 @@ class App extends Component {
       <div className="row">
         <div className="col-sm-12">
           <div className="jumbotron text-centre">
-          <h2>ArtLink</h2>
+          <h2>Artu Link</h2>
           <p className="lead">subheading</p>
         </div>
       </div>
@@ -104,6 +104,7 @@ class App extends Component {
       </div>
     </div>
     </div>
+    <AddActivity/>
 
 </div>
     );

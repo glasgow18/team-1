@@ -27,6 +27,51 @@ class App extends Component {
             <Main/>
         </Content>
     </Layout>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-sm-12">
+          <div className="jumbotron text-centre">
+          <h2>ArtLink</h2>
+          <p className="lead">subheading</p>
+        </div>
+      </div>
+      </div>
+      <div className="row">
+        <div className="col-sm-12">
+          <div className="jumbotron">
+            <h4>Search an Activity</h4>
+            <p>redirect to searchpage</p>
+        </div>
+      </div>
+      </div>
+      <div className="row">
+        <div className="col-sm-12">
+          <div className="jumbotron">
+            <h4>Add an Activity</h4>
+            <p>redirect to add activity</p>
+            <div id="addActivityButton">
+                <button onclick="location.href='AddActivity.html'">Add an Activity</button>
+            </div>
+        </div>
+      </div>
+      </div>
+      <div className="container">
+      <div className="row">
+        <div className="col-sm-12">
+          <div className="jumbotron">
+            <h4>Recent Activities</h4>
+            <div className="card">
+              <div className="card-body">
+                <h3>Kicking Leaves</h3>
+                <p className="lead">Kick some leaves</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
 </div>
     );
   }

@@ -19,7 +19,7 @@ class App extends Component {
             <Navigation>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
-            <Link to="/searchpage">SearchPage</Link>
+            <Link to="/search">SearchPage</Link>
             </Navigation>
         </Drawer>
         <Content>

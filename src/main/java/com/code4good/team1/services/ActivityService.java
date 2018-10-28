@@ -25,6 +25,9 @@ public class ActivityService {
 
     public void createActivity(Activity activity) {
         activityRepository.save(activity);
+        activity.tags.forEach(tag -> {
+            tag.activityID = activity.id;
+        });
     }
 
     public void addComment(int id, String comment) {

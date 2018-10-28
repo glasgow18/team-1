@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Comment {
 
     @Column
-    private int activityID;
+    public int activityID;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

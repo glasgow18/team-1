@@ -71,39 +71,46 @@ class Register extends Component {
     render() {
         return (
 
-          <div className="container-fluid register-wrapper">
-            <div className="row">
-      <div class="col-sm-4"></div>
-            <div className="col-sm-4">
-              <div className="FormCenter">
-                  <form onSubmit={this.handleSubmit} className="RegisterForum" onSubmit={this.handleSubmit}>
-                      <div className="FormField">
+            <div className="container-fluid register-wrapper">
+                <div className="row">
+                    <div class="col-sm-4"></div>
+                    <div className="col-sm-4">
+                        <div className="FormCenter">
+                            <form onSubmit={this.handleSubmit} className="RegisterForum" onSubmit={this.handleSubmit}>
+                                <div className="FormField">
 
-                          <label className="text-center FormField__Label" htmlFor="email">E-Mail Address</label>
-                          <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
-                      </div>
+                                    <label className="text-center FormField__Label" htmlFor="email">E-Mail
+                                        Address</label>
+                                    <input type="email" id="email" className="FormField__Input"
+                                           placeholder="Enter your email" name="email" value={this.state.email}
+                                           onChange={this.handleChange}/>
+                                </div>
 
 
+                                <div className="FormField">
+                                    <label className="FormField__Label" htmlFor="password">Password</label>
+                                    <input type="password" id="password" className="FormField__Input"
+                                           placeholder="Enter your password" name="password" value={this.state.password}
+                                           onChange={this.handleChange}/>
+                                </div>
 
-                      <div className="FormField">
-                          <label className="FormField__Label" htmlFor="password">Password</label>
-                          <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
-                      </div>
+                                <div className="FormField">
+                                    <label className="FormField__Label" htmlFor="confirmedPassword">Confirm
+                                        Password</label>
+                                    <input type="password" id="confirmedpassword" className="FormField__Input"
+                                           placeholder="Confirm Password" name="confirmedPassword"
+                                           value={this.state.confirmedPassword} onChange={this.handleChange}/>
+                                </div>
 
-                      <div className="FormField">
-                          <label className="FormField__Label" htmlFor="confirmedPassword">Confirm Password</label>
-                          <input type="password" id="confirmedpassword" className="FormField__Input" placeholder="Confirm Password" name="confirmedPassword" value={this.state.confirmedPassword} onChange={this.handleChange} />
-                      </div>
-
-                      <div className="FormField">
-                          <button className="FormField__Button mr-20 button-primary">Register</button>
-                      </div>
-                  </form>
-              </div>
+                                <div className="FormField">
+                                    <button className="FormField__Button mr-20 button-primary">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
             </div>
-            <div class="col-sm-4"></div>
-            </div>
-          </div>
 
         )
     }

@@ -28,25 +28,25 @@ class ActivityPage extends Component {
 
     render() {
         return (
-            <div className = "container-fluid" >
-                <div className = "Label">
-                    <p className = "name" > this.state.name </p>
+            <div className="container-fluid">
+                <div className="Label">
+                    <p className="name"> this.state.name </p>
                 </div>
-                <div className = "Label">
-                    <p className = "description" >this.state.description</p>
+                <div className="Label">
+                    <p className="description">this.state.description</p>
                 </div>
-                <div className = "map">
+                <div className="map">
                     <simpleMap>
                 </div>
-                <div className = "comments">
-                    <p className = "" >this.state.comments</p>
+                <div className="comments">
+                    <p className="">this.state.comments</p>
                 </div>
-                <div className = "tags">
-                    <p className = "descriptionLabel" >this.state.tags</p>
+                <div className="tags">
+                    <p className="descriptionLabel">this.state.tags</p>
                 </div>
             </div>
     )
-        ;
+    ;
     }
 }
 

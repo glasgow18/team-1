@@ -1,75 +1,75 @@
 html body{
   background-color: #B8D8BA;
-  padding: 0;
-  margin: 0;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-.header-colour{
-background: linear-gradient(to right, #97b69b, #aac0aa);
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-body{
-  background-color:linear-gradient(to right, #97b69b, #aac0aa); 
+.header-colour {
+    background: linear-gradient(to right, #97b69b, #aac0aa);
 }
 
-.container-fluid{
-  margin: 0;
-  padding: 0;
+body {
+    background-color: linear-gradient(to right, #97b69b, #aac0aa);
 }
 
-.container{
-  margin: 0;
-  padding: 0;
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
 }
 
 .jumbotron{
-  background-color: #fcfcfc;
-padding-bottom: 2vh;
-margin: 0;
+    background-color: #fcfcfc;
+    padding-bottom: 2vh;
+    margin: 0;
 
 }
 
-.header{
-  color: white;
+.header {
+    color: white;
 }
 
-.subheading{
-  color:#f7f7f7;
+.subheading {
+    color: #f7f7f7;
 }
 
-.header-jumbotron{
-  margin-bottom: 0;
+.header-jumbotron {
+    margin-bottom: 0;
 }
 
-.main-wrapper{
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  background-color: #ffedbc;
-
-}
-
-.moarButton{
-  text-align: center;
-
-  background-color: #97B69B;
-  border: none;
-  box-shadow: none;
-  color: #EEE4E1;
-  transition-duration: 1.5s;
-
+.main-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffedbc;
 
 }
 
-.moarButton:hover{
+.moarButton {
+    text-align: center;
+
+    background-color: #97B69B;
+    border: none;
+    box-shadow: none;
+    color: #EEE4E1;
     transition-duration: 1.5s;
-  text-align: center;
 
-  background-color: #EEE4E1;
-  border: none;
-  box-shadow: none;
-  color: black;
+}
+
+.moarButton:hover {
+    transition-duration: 1.5s;
+    text-align: center;
+
+    background-color: #EEE4E1;
+    border: none;
+    box-shadow: none;
+    color: black;
 
 }

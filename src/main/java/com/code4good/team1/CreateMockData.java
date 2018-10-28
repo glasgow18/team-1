@@ -47,22 +47,21 @@ public class CreateMockData {
         tagsE.add(new Tag("Leaves"));
         tagsE.add(new Tag("Puddle"));
 
-
-        actServ.createActivity(new Activity("Alpha", "cool description of alpha", false, 1.0, 0.3, new ArrayList<>(), tagsA));
-        actServ.createActivity(new Activity("Bravo", "cool description of bravo", true, 0.0, 0.0, new ArrayList<>(), tagsA));
-        actServ.createActivity(new Activity("Charlie", "cool description of charlie", false, 9.0, 2.0, new ArrayList<>(), tagsA));
-        actServ.createActivity(new Activity("Delta", "cool description of delta", true, 10.0, 0.0, new ArrayList<>(), tagsB));
-        actServ.createActivity(new Activity("Echo", "cool description of echo", false, 0.1, 0.05, new ArrayList<>(), tagsB));
-        actServ.createActivity(new Activity("Foxtrot", "cool description of foxtrot", true, 0.0, 06.06, new ArrayList<>(), tagsC));
-        actServ.createActivity(new Activity("Golf", "cool description of golf", false, 0.60, 07.0, new ArrayList<>(), tagsC));
-        actServ.createActivity(new Activity("Hotel", "cool description of hotel", true, 9.0, 0.0, new ArrayList<>(), tagsC));
-        actServ.createActivity(new Activity("Indigo", "cool description of indigo", false, 0.0, 0.0, new ArrayList<>(), tagsC));
-        actServ.createActivity(new Activity("Juliet", "cool description of juliet", true, 3.0, 0.0, new ArrayList<>(), tagsD));
-        actServ.createActivity(new Activity("Kilo", "cool description of kilo", false, 0.4, 7.0, new ArrayList<>(), tagsD));
-        actServ.createActivity(new Activity("Lima", "cool description of lima", true, 0.7, 0.0, new ArrayList<>(), tagsD));
-        actServ.createActivity(new Activity("Mike", "cool description of mike", false, 3.0, 0.0, new ArrayList<>(), tagsD));
-        actServ.createActivity(new Activity("November", "cool description of november", true, 1.0, 0.0, new ArrayList<>(), tagsE));
-        actServ.createActivity(new Activity("Oscar", "cool description of oscar", false, 0.0, 0.8, new ArrayList<>(), tagsE));
+        actServ.createActivity(new Activity("Alpha", "cool description of alpha", false, 1.0, 0.3, new ArrayList<>(), new ArrayList<>(tagsA)));
+        actServ.createActivity(new Activity("Bravo", "cool description of bravo", true, 0.0, 0.0, new ArrayList<>(), new ArrayList<>(tagsA)));
+        actServ.createActivity(new Activity("Charlie", "cool description of charlie", false, 9.0, 2.0, new ArrayList<>(), new ArrayList<>(tagsA)));
+        actServ.createActivity(new Activity("Delta", "cool description of delta", true, 10.0, 0.0, new ArrayList<>(), new ArrayList<>(tagsB)));
+        actServ.createActivity(new Activity("Echo", "cool description of echo", false, 0.1, 0.05, new ArrayList<>(), new ArrayList<>(tagsB)));
+        actServ.createActivity(new Activity("Foxtrot", "cool description of foxtrot", true, 0.0, 06.06, new ArrayList<>(), new ArrayList<>(tagsC)));
+        actServ.createActivity(new Activity("Golf", "cool description of golf", false, 0.60, 07.0, new ArrayList<>(), new ArrayList<>(tagsC)));
+        actServ.createActivity(new Activity("Hotel", "cool description of hotel", true, 9.0, 0.0, new ArrayList<>(), new ArrayList<>(tagsC)));
+        actServ.createActivity(new Activity("Indigo", "cool description of indigo", false, 0.0, 0.0, new ArrayList<>(), new ArrayList<>(tagsC)));
+        actServ.createActivity(new Activity("Juliet", "cool description of juliet", true, 3.0, 0.0, new ArrayList<>(), new ArrayList<>(tagsD)));
+        actServ.createActivity(new Activity("Kilo", "cool description of kilo", false, 0.4, 7.0, new ArrayList<>(), new ArrayList<>(tagsD)));
+        actServ.createActivity(new Activity("Lima", "cool description of lima", true, 0.7, 0.0, new ArrayList<>(), new ArrayList<>(tagsD)));
+        actServ.createActivity(new Activity("Mike", "cool description of mike", false, 3.0, 0.0, new ArrayList<>(), new ArrayList<>(tagsD)));
+        actServ.createActivity(new Activity("November", "cool description of november", true, 1.0, 0.0, new ArrayList<>(), new ArrayList<>(tagsE)));
+        actServ.createActivity(new Activity("Oscar", "cool description of oscar", false, 0.0, 0.8, new ArrayList<>(), new ArrayList<>(tagsE)));
 
 
     }

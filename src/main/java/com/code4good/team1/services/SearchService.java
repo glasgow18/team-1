@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,29 +37,41 @@ public class SearchService {
         Gson gson = new GsonBuilder().create();
         List<Activity> searchList = new ArrayList<>();
 
-        for (String s : splitTerm) {
-            Optional<Activity> searchActivity = activityRepository.findByName(s);
-            if (searchActivity.isPresent()) {
-                searchList.add(searchActivity.get());
-            }
-            Optional<Tag> searchTag = tagRepository.findByTag(term);
-            if (searchTag.isPresent()) {
-                Iterable<Integer> tagID = Collections.singleton(searchTag.get().id);
-                Iterable<ActivityTags> activityTags = activityTagsRepository.findAllById(tagID);
-                for (ActivityTags at : activityTags) {
-                    Optional<Activity> result = activityRepository.findById(at.activityID);
-                    if (result.isPresent()) {
-                        searchList.add(result.get());
-                    }
-                }
-            }
 
+        for (String s : splitTerm) {
+            getNamedActivies(s, searchList);
+            getNamedTags(s, searchList);
         }
         populateComments(searchList);
         populateTags(searchList);
         return gson.toJson(searchList);
     }
 
+    private void getNamedActivies(String term, List<Activity> searchList) {
+        Optional<Iterable<Activity>> searchActivity = activityRepository.findAllByName(term);
+        if (searchActivity.isPresent()) {
+            searchActivity.get().forEach(elem -> {
+                searchList.add(elem);
+            });
+        }
+    }
+
+    private void getNamedTags(String term, List<Activity> searchList) {
+        Optional<Iterable<Tag>> searchTag = tagRepository.findAllByTag(term);
+        if (searchTag.isPresent()) {
+            searchTag.get().forEach(tag -> {
+                Optional<Iterable<ActivityTags>> activityTags = activityTagsRepository.findAllByTagID(tag.id);
+                if (activityTags.isPresent()) {
+                    for (ActivityTags at : activityTags.get()) {
+                        Optional<Activity> result = activityRepository.findById(at.activityID);
+                        if (result.isPresent()) {
+                            searchList.add(result.get());
+                        }
+                    }
+                }
+            });
+        }
+    }
 
     private void populateComments(List<Activity> searchList) {
         searchList.forEach(e -> {

@@ -9,4 +9,6 @@ import java.util.Optional;
 @Repository
 public interface ActivityTagsRepository extends CrudRepository<ActivityTags, Integer> {
     Optional<Iterable<ActivityTags>> findByActivityID(int activityID);
+
+    Optional<Iterable<ActivityTags>> findAllByTagID(int tagID);
 }

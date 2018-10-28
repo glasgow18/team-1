@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div className="demo-big-content">
     <Layout>
-        <Header className='header-colour'title="My Portfolio" scroll>
+        <Header className='header-colour'title="Discovery" scroll>
 
         </Header>
         <Drawer title="Title">

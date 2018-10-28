@@ -79,11 +79,7 @@ class SearchPage extends Component {
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-sm-12">
-            <Activity />
-          </div>
-        </div>
+        
       </div>
     );
   }

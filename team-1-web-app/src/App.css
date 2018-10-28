@@ -5,3 +5,11 @@ html body{
 .jumbotron{
   background-color: #FCDDBC;
 }
+
+.header-colour {
+  background: linear-gradient(to right, #97b69b, #aac0aa); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body{
+  background-color: linear-gradient(to right, #97b69b, #aac0aa);
+}

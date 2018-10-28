@@ -1,11 +1,21 @@
-body{
-    padding: 2rem;
+body hmtl{
+
+    /* background-color: #F4D889; */
 }
 
 .search-header h1{
    text-align: center;
 }
+
+.header{
+  color: white;
+}
 .form-control{
+min-height: 7vh;
+width: 50vw;
+}
+
+.activity-wrapper{
 
 }
 
@@ -19,5 +29,18 @@ body{
 }
 
 .activity-card{
-  max-height: 20vh;
+  width: auto;
+  height: 15vh;
+
+}
+
+
+
+.searchbar{
+  /* background-color: #F4D889; */
+}
+
+.jumbotron{
+  padding-right:2px;
+
 }

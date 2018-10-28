@@ -72,7 +72,7 @@ class AddActivity extends Component {
     return (
       <div className="container-fluid add-activity-wrapper">
         <div className="row">
-          <div className="col-sm-12">
+          <div className="col-sm-4">
             <div className="jumbotron">
               <h4>Add an Activity</h4>
               <p className="lead">Add some extra tings fam</p>
